@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../services/firebase';  
-import style from "./Cadastro.module.css"
-
-
+import styles from "./Cadastro.module.css";
 
 const Cadastro = () => {
   const [email, setEmail] = useState('');
@@ -13,7 +11,6 @@ const Cadastro = () => {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      // Redireciona para o login ou página inicial
       alert('Conta cadastrada com sucesso !');
       window.location.href = '/Login';
     } catch (error) {
@@ -22,11 +19,14 @@ const Cadastro = () => {
   };
 
   return (
-    <form onSubmit={handleCadastro}>
-      <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-      <input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)}/>
-      <button type="submit">Cadastrar</button>
-    </form>
+    <div className={styles.container}>
+      <form onSubmit={handleCadastro} className={styles.form}>
+        <h2 className={styles.title}>Faça seu cadastro !</h2>
+        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className={styles.input} />
+        <input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} className={styles.input} />
+        <button type="submit" className={styles.button}>Cadastrar</button>
+      </form>
+    </div>
   );
 };
 
