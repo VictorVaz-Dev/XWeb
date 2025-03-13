@@ -7,10 +7,8 @@ import Home from '../pages/home/Home';
 export default function Rotas(){
     return(
         <Routes>
-            <Route path="/Login" Component={Login} />
-            <Route path="/Cadastro" Component={Cadastro} />   
-
-            
+            <Route path="/" Component={Login} />
+            <Route path="/cadastro" Component={Cadastro} />   
         </Routes>
     )
 }

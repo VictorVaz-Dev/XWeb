@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../services/firebase';  
 import styles from "./Cadastro.module.css";
+import Link from '../../components/link/Link';
 
 const Cadastro = () => {
   const [email, setEmail] = useState('');
@@ -12,7 +13,7 @@ const Cadastro = () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       alert('Conta cadastrada com sucesso !');
-      window.location.href = '/Login';
+      window.location.href = '/';
     } catch (error) {
       alert('Erro ao criar conta');
     }
@@ -25,6 +26,7 @@ const Cadastro = () => {
         <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className={styles.input} />
         <input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} className={styles.input} />
         <button type="submit" className={styles.button}>Cadastrar</button>
+        <Link to="/" label='Voltar'></Link>
       </form>
     </div>
   );

@@ -1,0 +1,25 @@
+.links{
+    background: #FFA500;
+    border: none;
+    padding: 8px;
+    margin: 10px 0px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    transition: 0.3s;
+  }
+
+  .links a{
+    text-decoration: none;
+    color: black;
+    font-size: 13.3px;
+    font-weight: bold;  
+  }
+  
+  .links:hover {
+    background: #e49400;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
+  }

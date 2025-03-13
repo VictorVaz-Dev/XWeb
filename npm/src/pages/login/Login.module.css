@@ -39,6 +39,11 @@
     border-color: #FFA500;
     box-shadow: 0 0 10px white;
   }
+
+  .autenticator{
+    display: flex;
+    gap: 30px;
+  }
   
   .button {
     background: #FFA500;
